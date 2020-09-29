@@ -50,8 +50,46 @@ namespace HarcosProjekt
                 Console.WriteLine(item+"\n");
             }
 
-            
+            for (int i = 0; i < harcosok.Count; i++)
+            {
+                Console.WriteLine("{0}.{1}", i+1, harcosok[i]);
+            }
 
+            //meccs
+            char valasztas;
+            do
+            {
+                Console.WriteLine("Válasszn a lehetőségek közül: " +
+                    "\ta) Megküzdeni egy harcossal" +
+                    "\tb) Gyógyulni" +
+                    "\tc) Kilépni");
+                valasztas = Convert.ToChar(Console.ReadLine());
+                while (valasztas != 'a' && valasztas != 'b' && valasztas != 'c')
+                {
+                    Console.WriteLine("Válasszn a lehetőségek közül: " +
+                    "\ta) Megküzdeni egy harcossal" +
+                    "\tb) Gyógyulni" +
+                    "\tc) Kilépni");
+                    valasztas = Convert.ToChar(Console.ReadLine());
+
+                    
+
+                }
+                if (valasztas == 'a')
+                {
+
+                }
+                else if (valasztas == 'b')
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine("Adjon egy másik betűt!");
+                }
+
+            } 
+            while (valasztas != 'c');
 
             Console.ReadLine();
         }
