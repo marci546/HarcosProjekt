@@ -17,7 +17,7 @@ namespace HarcosProjekt
 
         public Harcos(string nev, int statuszSablon)
         {
-            this.nev = nev;
+            this.Nev = nev;
             szint = 1;
             tapasztalat = 0;
             if (statuszSablon == 1)
@@ -35,6 +35,7 @@ namespace HarcosProjekt
                 alapEletero = 8;
                 alapSebzes = 5;
             }
+            eletero = MaxEletero;
         }
 
         public string Nev { get => nev; set => nev = value; }
