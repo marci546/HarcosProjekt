@@ -39,8 +39,32 @@ namespace HarcosProjekt
 
         public string Nev { get => nev; set => nev = value; }
         public int Szint { get => szint; set => szint = value; }
-        public int Tapasztalat { get => tapasztalat; set => tapasztalat = value; }
-        public int Eletero { get => eletero; set => eletero = value; }
+        public int Tapasztalat { get => tapasztalat; 
+            set 
+            {
+                if (this.tapasztalat == SzintLepeshez)
+                {
+                    this.szint++;
+                    this.tapasztalat = 0;
+                    this.eletero = MaxEletero;
+                }
+            } 
+        }
+        public int Eletero { get => eletero; 
+            set
+            {
+                if (this.eletero == 0)
+                {
+                    this.tapasztalat = 0;
+                }
+
+                if (this.eletero > this.MaxEletero)
+                {
+                    this.eletero = this.MaxEletero;
+                }
+            }
+                
+        }
         public int AlapEletero { get => alapEletero; }
         public int AlapSebzes { get => alapSebzes; }
         public int Sebzes { get => alapSebzes + szint; }
@@ -91,7 +115,14 @@ namespace HarcosProjekt
 
         public void Gyogyul()
         {
-
+            if (this.eletero == 0)
+            {
+                this.eletero = this.MaxEletero;
+            }
+            else
+            {
+                this.eletero += this.szint + 3;
+            }
         }
 
         public override string ToString()
