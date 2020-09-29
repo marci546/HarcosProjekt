@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace HarcosProjekt
 {
     class Program
-    {
+    {    
         static void Main(string[] args)
         {
             List<Harcos> harcosok = new List<Harcos>();
@@ -31,12 +31,28 @@ namespace HarcosProjekt
                 throw;
             }
             r.Close();
+            //foreach (var item in harcosok)
+            //{
+            //    Console.WriteLine(item + "\n");
+            //}
+
+            Console.Write("Adja meg a nevét: ");
+            string nev = Console.ReadLine();
+
+            Console.Write("Adja meg a státuszsablont(1/2/3): ");
+            int statusz = Convert.ToInt32(Console.ReadLine());
+
+            var a = new Harcos(nev, statusz);
+            harcosok.Add(a);
+
             foreach (var item in harcosok)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item+"\n");
             }
+
             
-            
+
+
             Console.ReadLine();
         }
     }
